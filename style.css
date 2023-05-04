@@ -1,0 +1,29 @@
+body{
+    padding: 25px;
+  }
+.title {
+      color: #5C6AC4;
+  }
+  
+.meme-generator {
+        margin: 20px auto;
+        width:400px;
+        font-family:Sans-Serif;
+        }
+  
+.meme-generator label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        }
+        
+.meme-generator input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        }
+        
+#meme {
+        width: 100%;
+        }
+  
