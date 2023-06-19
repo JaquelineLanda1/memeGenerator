@@ -1,9 +1,13 @@
 body{
     padding: 25px;
   }
+
 .title {
       color: #5C6AC4;
-  }
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+}
   
 .meme-generator {
         margin: 20px auto;
@@ -22,8 +26,38 @@ body{
         box-sizing: border-box;
         margin-bottom: 20px;
         }
-        
-#meme {
-        width: 100%;
-        }
-  
+
+form {
+        width:80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background-color: pink;
+}
+
+.previewSection {
+        margin-left: auto;
+        margin-right:auto;
+        text-align: center;
+}
+
+#imgPreview {
+        width: 400px;
+        height: 400px;
+}
+
+#top-text {
+        position: relative;
+        top: 75px;
+        font-family: 'Anton', sans-serif;
+        color: white;
+        font-size: 200%;
+}
+
+#bottom-text {
+        position: relative;
+        bottom: 75px;
+        font-family: 'Anton', sans-serif;
+        color: white;
+        font-size: 200%;
+}

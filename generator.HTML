@@ -6,25 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    
   </head>
   
   <body>
     
     <div class="meme-generator">
       <h1 class="title">Meme Generator</h1>
-      
-      <label>Select an Image:</label>
-      <input type="file" id="imgInput">
-      
-      <label>Top Text:</label>
-      <input type="text" id="topText">
-      
-      <label>Bottom Text:</label>
-      <input type="text" id="bottomText">
-      
-      
-      <canvas id="meme"></canvas>
     </div>
+
+    
+    <form action="" id="memeForm">
+      <div>
+        
+          <label for="img">Paste your image URL: <br>
+          <input type="url" id="imgInput" placeholder="www.example.com">
+          </label><br><br>
+      
+          <label for="topText">Top Text: <br>
+          <input type="text" placeholder="Type Here" id="topText">
+          </label><br><br>
+      
+          <label for="bottomText">Bottom Text: <br>
+          <input type="text" placeholder="Type Here" id="bottomText">
+          </label><br><br>
+        
+          <label>
+          <input type="submit" value="submit">
+          </label><br><br>
+      
+      </div>
+    </form>
+
+    <section class="previewSection">
+      <h2 id="top-text">TOP TEXT</h2>
+      <img id="imgPreview" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg">
+      <h2 id="bottom-text">BOTTOM TEXT</h2>
+    </section>
     
     <script src="input.js"></script>
   </body>

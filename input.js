@@ -3,55 +3,25 @@ const topText = document.querySelector("#topText");
 const bottomText = document.querySelector("#bottomText");
 const canvas = document.querySelector("#meme");
 
-let image;
+const image = document.querySelector('img');
+/* This is how you change the src within that image:
+img.setAttribute('src', 'https://www.news10.com/wp-content/uploads/sites/64/2022/07/Cat.jpg?w=2560&h=1440&crop=1')
+*/
+/* This gets you the URL from the input: imgInput.value;*/
 
-imgInput.addEventListener("change", () => {
-      const imageDataUrl = URL.createObjectURL(imgInput.files[0]);
-      
-      image = new Image();
-      image.src = imageDataUrl;
-      
-      image.addEventListener("load", () => {
-            updateMemeCanvas( canvas, image, topText.value, bottomText.value);
-            }, { once:true });
-      });
-      
-topText.addEventListener("change", () => {
-      updateMemeCanvas(canvas, image, topText.value, bottomText.value);
-      });
-      
-bottomText.addEventListener("change", () => {
-      updateMemeCanvas(canvas, image, topText.value, bottomText.value);
-      });
+/* This gets you the preview URL */
+const previewURL = image.getAttribute('src');
 
-function updateMemeCanvas(canvas, image, topText, bottomText) {
-      const ctx = canvas.getContext("2d");
-      const width = image.width;
-      const height = image.height;
-      const fontSize = Math.floor(width / 10);
-      const yOffset = height / 25;
-      
-      
-      
-      canvas.width = width;
-      canvas.height = height;
-      ctx.drawImage(image, 0, 0);
-      
-    
-      ctx.strokeStyle = "black";
-      ctx.lineWidth = Math.floor(fontSize / 4);
-      ctx.fillStyle = "white";
-      ctx.textAlign = "center";
-      ctx.lineJoin = "round";
-      ctx.font = `${fontSize}px sans-serif`;
-      
-     
-      ctx.textBaseline = "top";
-      ctx.strokeText(topText, width / 2, yOffset);
-      ctx.fillText(topText, width / 2, yOffset);
-      
-      
-      ctx.textBaseline = "bottom";
-      ctx.strokeText(bottomText, width / 2, height - yOffset);
-      ctx.fillText(bottomText, width / 2, height - yOffset);
-      };
+imgInput.addEventListener("change", (e) => {
+    image.setAttribute('src', imgInput.value);
+});
+
+const displayTop = document.querySelector("#top-text");
+const displayBottom = document.querySelector("#bottom-text");
+
+topText.addEventListener("change", (e) => {
+    displayTop.innerText = topText.value;
+});
+bottomText.addEventListener("change", (e) => {
+    displayBottom.innerText = bottomText.value;
+});
